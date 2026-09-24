@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дебетовые карты — Картотека</title>
+<meta name="description" content="Шесть дебетовых карт: кэшбэк, стоимость обслуживания и процент на остаток в одинаковых строках.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="logo" href="index.html"><span class="logo__slab"></span>Картотека</a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="debit.html" aria-current="page">Дебетовые</a>
+      <a href="credit.html">Кредитные</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="wrap page-head">
+    <div>
+      <h1 class="page-head__title">Дебетовые карты шести банков</h1>
+      <p class="page-head__lead">Три параметра, по которым карты действительно отличаются: сколько вернётся кэшбэком, во сколько обойдётся обслуживание и какая ставка начисляется на деньги на счёте.</p>
+    </div>
+    <p class="page-head__stamp">Тарифы сверены<br>23 сентября 2026</p>
+  </section>
+
+  <section class="wrap offers">
+
+    <!-- ВТБ -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-vtb">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">ВТБ</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 8102</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>07/30</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">ВТБ</h2>
+          <p class="offer__product">Карта возможностей</p>
+          <p class="offer__note">Категории кэшбэка выбираются в приложении каждый месяц, повышенный процент действует у партнёров банка.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 30<span>%</span></span>
+              <span class="param__label">Кэшбэк у партнёров</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">Обслуживание, всегда</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 8<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-vtb">Оформить</a>
+          <small>Решение по заявке — в день обращения</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. ВТБ</p>
+    </article>
+
+    <!-- Т-Банк -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-tbank">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">Т-Банк</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 2094</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>11/29</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">Т-Банк</h2>
+          <p class="offer__product">Black</p>
+          <p class="offer__note">Обслуживание бесплатное, пока на счетах лежит от 50 000 ₽ или подключена подписка; иначе 99 ₽ в месяц.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 30<span>%</span></span>
+              <span class="param__label">Кэшбэк в категориях</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">При остатке от 50 000 ₽</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 7<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-tbank">Оформить</a>
+          <small>Доставка курьером, без визита в офис</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. Т-Банк</p>
+    </article>
+
+    <!-- ОТП Банк -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-otp">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">ОТП Банк</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 7326</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>04/30</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">ОТП Банк</h2>
+          <p class="offer__product">ОТП Максимум</p>
+          <p class="offer__note">Самая высокая ставка на остаток в подборке; повышенный процент держится первые три месяца после открытия.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 15<span>%</span></span>
+              <span class="param__label">Кэшбэк в категориях</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">Обслуживание, всегда</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 10<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-otp">Оформить</a>
+          <small>Выпуск карты — бесплатно</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. ОТП Банк</p>
+    </article>
+
+    <!-- МТС Банк -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-mts">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">МТС Банк</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 6743</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>01/31</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">МТС Банк</h2>
+          <p class="offer__product">MTS Cashback</p>
+          <p class="offer__note">Кэшбэк начисляется баллами и списывается на покупки или на связь; обслуживание бесплатно при тратах от 10 000 ₽ в месяц.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 25<span>%</span></span>
+              <span class="param__label">Кэшбэк баллами</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">При тратах от 10 000 ₽</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 9<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-mts">Оформить</a>
+          <small>Баллы можно тратить на связь</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. МТС Банк</p>
+    </article>
+
+    <!-- Озон Банк -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-ozon">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">Озон Банк</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 3517</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>08/30</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">Озон Банк</h2>
+          <p class="offer__product">Ozon Card</p>
+          <p class="offer__note">Максимальный процент на остаток в подборке, но кэшбэк приходит баллами и тратится внутри маркетплейса.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 25<span>%</span></span>
+              <span class="param__label">Кэшбэк баллами Ozon</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">Обслуживание, всегда</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 12<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-ozon">Оформить</a>
+          <small>Открывается в приложении Ozon</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. Озон Банк</p>
+    </article>
+
+    <!-- ПСБ -->
+    <article class="offer">
+      <div class="offer__body">
+        <div class="offer__tray">
+          <div class="bankcard face-psb">
+            <div class="bankcard__top">
+              <div>
+                <div class="bankcard__brand">ПСБ</div>
+                <div class="bankcard__kind">Дебетовая</div>
+              </div>
+              <span class="bankcard__chip"></span>
+            </div>
+            <div class="bankcard__mid">
+              <svg class="bankcard__wave" width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 5.5a6 6 0 0 1 0 7"/><path d="M7 3a10 10 0 0 1 0 12"/><path d="M11 .8a14 14 0 0 1 0 16.4"/>
+              </svg>
+              <span class="bankcard__digits">•••• •••• •••• 4180</span>
+            </div>
+            <div class="bankcard__foot"><span>Мир</span><span>09/31</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="offer__bank">ПСБ</h2>
+          <p class="offer__product">Твой кэшбэк</p>
+          <p class="offer__note">Кэшбэк приходит рублями на счёт, без конвертации баллов; отдельные условия действуют для военнослужащих и бюджетников.</p>
+
+          <div class="params">
+            <div class="param">
+              <span class="param__value"><i>до</i> 10<span>%</span></span>
+              <span class="param__label">Кэшбэк рублями</span>
+            </div>
+            <div class="param">
+              <span class="param__value">0<span> ₽</span></span>
+              <span class="param__label">При тратах от 10 000 ₽</span>
+            </div>
+            <div class="param">
+              <span class="param__value"><i>до</i> 8<span>%</span></span>
+              <span class="param__label">На остаток по счёту</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer__side">
+          <a class="btn btn--solid btn--wide" href="#link-psb">Оформить</a>
+          <small>Кэшбэк деньгами, не баллами</small>
+        </div>
+      </div>
+      <p class="offer__ad">Реклама. ПСБ</p>
+    </article>
+
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p>Картотека — справочная витрина банковских продуктов. Условия приведены для сравнения и не являются офертой: точные тарифы, комиссии и требования к заёмщику смотрите на сайте банка перед оформлением.</p>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="debit.html">Дебетовые</a>
+      <a href="credit.html">Кредитные</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
