@@ -481,6 +481,11 @@ img, svg { display: block; max-width: 100%; }
   font-size: 12px;
   color: #948A7E;
 }
+.erid-placeholder {
+  font-size: 10px;
+  color: #999;
+  margin-left: 4px;
+}
 
 /* ---------- Карта банка ---------- */
 
