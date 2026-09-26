@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+Sitemap: https://sravnikarty.ru/sitemap.xml
