@@ -380,5 +380,19 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var yclid = p.get('yclid') || p.get('_yclid') || '';
+  if (yclid) sessionStorage.setItem('yclid', yclid);
+  else yclid = sessionStorage.getItem('yclid') || '';
+  if (!yclid) return;
+  document.querySelectorAll('a[href*="rko-group.ru/s/"]').forEach(function(a){
+    var u = new URL(a.href);
+    u.searchParams.set('click_id', yclid);
+    a.href = u.toString();
+  });
+})();
+</script>
 </body>
 </html>
