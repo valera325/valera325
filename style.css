@@ -632,6 +632,7 @@ img, svg { display: block; max-width: 100%; }
 .site-foot nav { display: flex; gap: 18px; }
 .site-foot a { text-decoration: none; }
 .site-foot a:hover { color: var(--terra); }
+.site-foot__legal { width: 100%; font-size: 12px; opacity: .65; margin-top: 8px; }
 
 /* ---------- Адаптив ---------- */
 
