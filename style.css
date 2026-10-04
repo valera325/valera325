@@ -1,21 +1,21 @@
 /* Картотека — витрина банковских карт
-   Палитра: тёплый песок, тёмно-коричневый, терракота, приглушённый мох */
+   Палитра: светлая современная, синие акценты */
 
 :root {
-  --sand:        #F5F0E8;
-  --sand-deep:   #EBE3D5;
-  --sand-line:   #DFD5C2;
-  --paper:       #FDFAF4;
-  --ink:         #2C2C2C;
-  --ink-soft:    #6E655B;
-  --terra:       #D2691E;
-  --terra-deep:  #A9511A;
-  --moss:        #4A7C59;
+  --sand:        #f8f9fa;
+  --sand-deep:   #f1f5f9;
+  --sand-line:   #e2e8f0;
+  --paper:       #ffffff;
+  --ink:         #1f2937;
+  --ink-soft:    #6b7280;
+  --terra:       #4f46e5;
+  --terra-deep:  #3730a3;
+  --moss:        #2563eb;
 
-  --shadow-lift: 0 1px 2px rgba(44, 28, 12, .05),
-                 0 10px 24px -12px rgba(44, 28, 12, .22);
-  --shadow-card: 0 2px 4px rgba(44, 28, 12, .16),
-                 0 14px 28px -10px rgba(44, 28, 12, .34);
+  --shadow-lift: 0 1px 3px rgba(0, 0, 0, .06),
+                 0 4px 16px rgba(0, 0, 0, .05);
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, .07),
+                 0 8px 24px rgba(0, 0, 0, .06);
 
   --radius:      14px;
 }
@@ -66,7 +66,7 @@ img, svg { display: block; max-width: 100%; }
 
 .site-head {
   border-bottom: 1px solid var(--sand-line);
-  background: rgba(245, 240, 232, .92);
+  background: rgba(248, 249, 250, .95);
   backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
@@ -479,7 +479,7 @@ img, svg { display: block; max-width: 100%; }
   padding-top: 12px;
   border-top: 1px solid var(--sand-line);
   font-size: 12px;
-  color: #948A7E;
+  color: #9ca3af;
 }
 .erid-placeholder {
   font-size: 10px;
@@ -634,6 +634,156 @@ img, svg { display: block; max-width: 100%; }
 .site-foot a:hover { color: var(--terra); }
 .site-foot__legal { width: 100%; font-size: 12px; opacity: .65; margin-top: 8px; }
 
+/* ---------- mrktbank.ru format cards ---------- */
+
+.mrk-offers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 88px;
+}
+
+.mrk-card {
+  background: var(--paper);
+  border: 1px solid var(--sand-line);
+  border-radius: 16px;
+  padding: 26px 22px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.mrk-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+}
+
+.mrk-card.first {
+  border-color: var(--terra);
+  border-width: 2px;
+}
+
+.mrk-num {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  font-size: 92px;
+  font-weight: 900;
+  color: var(--terra);
+  opacity: .07;
+  line-height: 1;
+  letter-spacing: -3px;
+  user-select: none;
+  pointer-events: none;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.mrk-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--terra), var(--moss));
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: .25px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.mrk-badge--muted {
+  background: var(--sand-deep);
+  color: var(--ink-soft);
+}
+
+.mrk-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+  letter-spacing: -.3px;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.mrk-product {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+.mrk-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.mrk-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.mrk-perk::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: linear-gradient(135deg, var(--terra), var(--moss));
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.mrk-btn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background: var(--terra);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .16s, transform .12s;
+}
+
+.mrk-btn:hover {
+  background: var(--terra-deep);
+  text-decoration: none;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.mrk-ad {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  text-align: center;
+  opacity: .7;
+  line-height: 1.5;
+}
+
 /* ---------- Адаптив ---------- */
 
 @media (max-width: 1000px) {
@@ -649,10 +799,12 @@ img, svg { display: block; max-width: 100%; }
   .offer__side .btn { flex: 0 0 240px; }
   .offer__side small { text-align: left; }
   .why__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .mrk-offers { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px) {
   body { font-size: 16px; }
+  .mrk-offers { grid-template-columns: 1fr; }
   .pair { grid-template-columns: 1fr; padding-bottom: 64px; }
   .page-head { grid-template-columns: 1fr; gap: 22px; align-items: start; }
   .page-head__stamp {
