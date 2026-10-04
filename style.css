@@ -792,6 +792,176 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1.5;
 }
 
+/* ---------- Калькулятор кэшбэка (debit.html) ---------- */
+
+.debit-calc {
+  padding-block: 0 0;
+  margin-bottom: 44px;
+}
+
+.debit-calc__title {
+  font-size: clamp(26px, 3.2vw, 38px);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.debit-calc__lead {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  max-width: 56ch;
+}
+
+.debit-calc__inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  background: var(--paper);
+  border: 1px solid var(--sand-line);
+  border-radius: 18px;
+  padding: 28px 36px 24px;
+  margin-bottom: 20px;
+}
+
+.debit-calc__field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(160,160,176,.55);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 8px;
+}
+
+.debit-calc__val {
+  font-size: 24px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #6b46c1, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  letter-spacing: -.5px;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.2;
+}
+
+.debit-calc__inputs input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: rgba(255,255,255,.07);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.debit-calc__inputs input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #6b46c1, #4f46e5);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(107,70,193,.5);
+}
+
+.debit-calc__inputs input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #6b46c1, #4f46e5);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.debit-calc__table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.debit-calc__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--sand-line);
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 560px;
+}
+
+.debit-calc__table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(160,160,176,.55);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--sand-line);
+  background: rgba(255,255,255,.03);
+  white-space: nowrap;
+}
+
+.debit-calc__table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  font-size: 15px;
+  color: #fff;
+}
+
+.debit-calc__table tr:last-child td { border-bottom: none; }
+
+.debit-calc__table tr.dc-best td {
+  background: rgba(107,70,193,.07);
+}
+
+.debit-calc__table tr.dc-best td:first-child {
+  border-left: 2px solid #6b46c1;
+  padding-left: 18px;
+}
+
+.dc-total {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.dc-total-top {
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dc-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #6b46c1, #4f46e5);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.dc-soft { color: rgba(160,160,176,.6); font-size: 13px; }
+
+.debit-calc__note {
+  font-size: 12px;
+  color: rgba(160,160,176,.5);
+  padding: 10px 16px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid var(--sand-line);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
 /* ---------- Подвал ---------- */
 
 .site-foot {
@@ -837,6 +1007,7 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .pair { grid-template-columns: 1fr; padding-bottom: 64px; }
+  .debit-calc__inputs { grid-template-columns: 1fr; gap: 20px; padding: 20px 22px; }
   .page-head { grid-template-columns: 1fr; gap: 22px; align-items: start; }
   .page-head__stamp {
     text-align: left;

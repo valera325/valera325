@@ -35,6 +35,47 @@
     <p class="page-head__stamp">Тарифы сверены<br>23 сентября 2026</p>
   </section>
 
+  <!-- ===== Калькулятор кэшбэка ===== -->
+  <section class="wrap debit-calc">
+    <h2 class="debit-calc__title">Калькулятор кэшбэка и дохода</h2>
+    <p class="debit-calc__lead">Введите параметры — покажем, сколько каждая карта вернёт в рублях за месяц.</p>
+
+    <div class="debit-calc__inputs">
+      <div class="debit-calc__field">
+        <label>Траты в месяц</label>
+        <div class="debit-calc__val" id="dSpend">50 000 ₽</div>
+        <input type="range" id="sSpend" min="10000" max="300000" step="5000" value="50000">
+      </div>
+      <div class="debit-calc__field">
+        <label>Доля в кэшбэк-категориях</label>
+        <div class="debit-calc__val" id="dRatio">30%</div>
+        <input type="range" id="sRatio" min="0" max="100" step="5" value="30">
+      </div>
+      <div class="debit-calc__field">
+        <label>Остаток на счёте</label>
+        <div class="debit-calc__val" id="dBalance">100 000 ₽</div>
+        <input type="range" id="sBalance" min="0" max="300000" step="10000" value="100000">
+      </div>
+    </div>
+
+    <div class="debit-calc__table-wrap">
+      <table class="debit-calc__table">
+        <thead>
+          <tr>
+            <th>Карта</th>
+            <th>Кэшбэк / мес</th>
+            <th>Доход на остаток</th>
+            <th>Итого / мес</th>
+            <th>За год</th>
+          </tr>
+        </thead>
+        <tbody id="dcBody"></tbody>
+      </table>
+    </div>
+
+    <p class="debit-calc__note">* Кэшбэк рассчитан при средней ставке по категории: ВТБ и Т-Банк — до 30% (расчёт по 15%), ОТП — до 15% (расчёт по 10%), МТС и Озон — баллами (до 25%, расчёт по 12%, эквивалент ×0.85 и ×0.90 руб./балл). Базовая ставка вне категорий — 1–1.5%. Доход на остаток — ставка банка / 12. Все цифры ориентировочны, уточняйте на сайте банка.</p>
+  </section>
+
   <div class="wrap rko-grid">
 
     <!-- 01 ВТБ -->
@@ -154,6 +195,63 @@
     <p class="site-foot__legal">ИП Кузлякин Валерий Юрьевич&nbsp;&nbsp;·&nbsp;&nbsp;ИНН&nbsp;550723498810&nbsp;&nbsp;·&nbsp;&nbsp;ОГРНИП&nbsp;326554300016144</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var CARDS = [
+    { id:'vtb',   name:'ВТБ',       base:.010, special:.150, deposit:.08, mult:1.00 },
+    { id:'tbank', name:'Т-Банк',    base:.010, special:.150, deposit:.07, mult:1.00 },
+    { id:'otp',   name:'ОТП Банк',  base:.010, special:.100, deposit:.10, mult:1.00 },
+    { id:'mts',   name:'МТС Банк',  base:.010, special:.120, deposit:.09, mult:.85  },
+    { id:'ozon',  name:'Озон Банк', base:.010, special:.120, deposit:.12, mult:.90  },
+    { id:'psb',   name:'ПСБ',       base:.015, special:.070, deposit:.08, mult:1.00 }
+  ];
+
+  function fmt(n){
+    return new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(Math.round(n))+' ₽';
+  }
+
+  function calc(){
+    var spend   = +document.getElementById('sSpend').value;
+    var ratio   = +document.getElementById('sRatio').value / 100;
+    var balance = +document.getElementById('sBalance').value;
+
+    document.getElementById('dSpend').textContent   = fmt(spend);
+    document.getElementById('dRatio').textContent   = Math.round(ratio*100)+'%';
+    document.getElementById('dBalance').textContent = fmt(balance);
+
+    var rows = CARDS.map(function(c){
+      var raw = spend*(1-ratio)*c.base + spend*ratio*c.special;
+      var cb  = raw * c.mult;
+      var dep = balance * c.deposit / 12;
+      return { name:c.name, cb:cb, dep:dep, total:cb+dep, points:c.mult<1 };
+    }).sort(function(a,b){ return b.total-a.total; });
+
+    var html = '';
+    rows.forEach(function(r,i){
+      var best = i===0;
+      var cbStr = fmt(r.cb) + (r.points ? ' <span class="dc-soft">(баллами)</span>' : '');
+      var badge  = best ? '<span class="dc-badge">Выгоднее всего</span>' : '';
+      var totStr = best
+        ? '<span class="dc-total-top">'+fmt(r.total)+'</span>'
+        : fmt(r.total);
+      html += '<tr class="'+(best?'dc-best':'')+'">'
+            + '<td><strong>'+r.name+'</strong>'+badge+'</td>'
+            + '<td>'+cbStr+'</td>'
+            + '<td>'+fmt(r.dep)+'</td>'
+            + '<td class="dc-total">'+totStr+'</td>'
+            + '<td class="dc-soft">'+fmt(r.total*12)+'</td>'
+            + '</tr>';
+    });
+    document.getElementById('dcBody').innerHTML = html;
+  }
+
+  document.getElementById('sSpend').addEventListener('input', calc);
+  document.getElementById('sRatio').addEventListener('input', calc);
+  document.getElementById('sBalance').addEventListener('input', calc);
+  calc();
+})();
+</script>
 
 <script>
 (function(){
