@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>РКО для бизнеса 2026 — сравнить 6 банков за 2 минуты</title>
+<meta name="description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Озон Банк, Уралсиб, Точка, Т-Банк. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="РКО для бизнеса 2026 — сравнить 6 банков за 2 минуты">
+<meta property="og:description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Озон Банк, Уралсиб, Точка, Т-Банк. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
+<meta property="og:image" content="/og-image.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="РКО для бизнеса 2026 — сравнить 6 банков">
+<meta name="twitter:description" content="Калькулятор стоимости РКО, сравнение тарифов, скрытые комиссии.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #F5F0E8;
+  --bg2:     #EDE7DA;
+  --bg3:     #E3DCD0;
+  --dark:    #1E120A;
+  --dark2:   #3D2B1F;
+  --muted:   #7A5C4A;
+  --accent:  #B8522A;
+  --accent2: #D4714A;
+  --tan:     #C9976A;
+  --white:   #FFFFFF;
+  --border:  #D4C9B8;
+  --green:   #2D7D38;
+  --shadow:  0 4px 24px rgba(30,18,10,.10);
+  --r:       12px;
+  --r-sm:    8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Golos Text',sans-serif;background:var(--bg);color:var(--dark);font-size:16px;line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.section{padding:80px 0}
+.section-title{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+.section-sub{font-size:18px;color:var(--muted);max-width:560px;margin-bottom:48px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,240,232,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav__logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark)}
+.nav__logo span{color:var(--accent)}
+.nav__links{display:flex;gap:28px;list-style:none}
+.nav__links a{color:var(--dark2);font-size:15px;font-weight:500;transition:color .2s}
+.nav__links a:hover{color:var(--accent);text-decoration:none}
+.nav__cta{background:var(--accent);color:var(--white)!important;padding:9px 20px;border-radius:var(--r-sm);font-weight:600!important;transition:background .2s!important}
+.nav__cta:hover{background:var(--accent2)!important;text-decoration:none!important}
+
+/* HERO */
+.hero{padding:80px 0 64px;background:linear-gradient(160deg,var(--bg) 0%,var(--bg2) 100%)}
+.hero__eyebrow{display:inline-block;background:var(--accent);color:var(--white);font-size:13px;font-weight:600;padding:5px 14px;border-radius:100px;letter-spacing:.5px;margin-bottom:20px;text-transform:uppercase}
+.hero__title{font-size:clamp(34px,5vw,60px);font-weight:700;max-width:760px;margin-bottom:20px}
+.hero__title em{color:var(--accent);font-style:normal}
+.hero__sub{font-size:19px;color:var(--muted);max-width:560px;margin-bottom:40px}
+.hero__btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.scenario-pill{padding:11px 22px;border:2px solid var(--border);border-radius:100px;background:var(--white);color:var(--dark2);font-family:'Golos Text',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s}
+.scenario-pill:hover,.scenario-pill.active{border-color:var(--accent);background:var(--accent);color:var(--white)}
+.hero__stats{display:flex;gap:40px;padding-top:48px;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat-val{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--accent)}
+.stat-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+
+/* CALCULATOR */
+.calc-wrap{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);padding:48px}
+.calc__inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.calc__field label{display:block;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:10px}
+.calc__val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--accent);margin-bottom:10px}
+input[type=range]{width:100%;-webkit-appearance:none;height:4px;background:var(--bg3);border-radius:2px;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--accent);border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(184,82,42,.4)}
+.calc__tbl{width:100%;border-collapse:collapse;margin-top:20px}
+.calc__tbl th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:2px solid var(--border)}
+.calc__tbl td{padding:14px 12px;border-bottom:1px solid var(--bg2);font-size:15px}
+.calc__tbl tr.best{background:#FFF8F5}
+.calc__tbl tr.best td:first-child{border-left:3px solid var(--accent);padding-left:9px}
+.badge-best{display:inline-block;background:var(--accent);color:var(--white);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+.calc__note{font-size:13px;color:var(--muted);margin-top:16px;padding:12px 16px;background:var(--bg2);border-radius:var(--r-sm)}
+
+/* CATALOG */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.chip{padding:9px 20px;border:1.5px solid var(--border);border-radius:100px;background:var(--white);color:var(--dark2);font-family:'Golos Text',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s}
+.chip:hover,.chip.active{border-color:var(--accent);background:var(--accent);color:var(--white)}
+.banks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bank-card{background:var(--white);border-radius:var(--r);border:1.5px solid var(--border);padding:28px;transition:box-shadow .2s,transform .2s;position:relative;display:flex;flex-direction:column}
+.bank-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.bank-card.hidden{display:none}
+.card-badge{position:absolute;top:20px;right:20px;background:var(--bg2);color:var(--tan);font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px}
+.card-badge.ac{background:var(--accent);color:var(--white)}
+.card-name{font-size:22px;font-weight:700;margin-bottom:4px}
+.card-tag{font-size:14px;color:var(--muted);margin-bottom:20px}
+.card-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.card-feat{background:var(--bg);border-radius:var(--r-sm);padding:10px 12px}
+.card-feat-lbl{font-size:12px;color:var(--muted);margin-bottom:2px}
+.card-feat-val{font-size:14px;font-weight:600}
+.card-tariffs{margin-bottom:20px}
+.tariff-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px}
+.tariff-row:last-child{border-bottom:none}
+.tariff-price{font-weight:600}
+.tariff-price.free{color:var(--green)}
+.card-actions{margin-top:auto;display:flex;gap:10px}
+.btn-primary{flex:1;padding:13px 16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--r-sm);font-family:'Golos Text',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;text-align:center;display:inline-block;text-decoration:none}
+.btn-primary:hover{background:var(--accent2);text-decoration:none;color:var(--white)}
+.btn-sec{padding:13px 14px;background:var(--bg2);color:var(--dark2);border:none;border-radius:var(--r-sm);font-family:'Golos Text',sans-serif;font-size:14px;cursor:pointer;transition:background .2s}
+.btn-sec:hover{background:var(--bg3)}
+.card-admark{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+.cmp-chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);cursor:pointer;padding-top:10px;border-top:1px solid var(--bg2);margin-top:10px}
+.cmp-chk input{cursor:pointer;accent-color:var(--accent)}
+
+/* SCENARIOS */
+.sc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+.sc-card{background:var(--white);border:2px solid var(--border);border-radius:var(--r);padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s}
+.sc-card:hover,.sc-card.active{border-color:var(--accent);background:#FFF8F5}
+.sc-icon{font-size:40px;margin-bottom:12px}
+.sc-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:6px}
+.sc-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.sc-result{display:none}
+.sc-result.show{display:block}
+.sc-result-title{font-size:22px;font-family:'Playfair Display',serif;margin-bottom:8px}
+.sc-result-sub{color:var(--muted);font-size:15px;margin-bottom:24px}
+
+/* HIDDEN FEES */
+.fees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fee-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden}
+.fee-hdr{background:var(--bg2);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.fee-hdr-name{font-size:17px;font-weight:600}
+.fee-toggle{font-size:20px;color:var(--accent);transition:transform .2s;display:inline-block}
+.fee-card.open .fee-toggle{transform:rotate(180deg)}
+.fee-body{display:none;padding:20px 24px}
+.fee-card.open .fee-body{display:block}
+.fee-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bg2);font-size:14px}
+.fee-row:last-child{border-bottom:none}
+.fee-lbl{color:var(--muted)}
+.fee-val{font-weight:600}
+.fee-val.warn{color:var(--accent)}
+
+/* COMPARISON BAR */
+.cmp-bar{position:fixed;bottom:0;left:0;right:0;background:var(--dark);color:var(--white);padding:16px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:200;box-shadow:0 -4px 20px rgba(0,0,0,.2);flex-wrap:wrap}
+.cmp-bar.show{display:flex}
+.cmp-items{display:flex;gap:10px;flex-wrap:wrap}
+.cmp-item{background:rgba(255,255,255,.15);padding:7px 14px;border-radius:var(--r-sm);font-size:14px;display:flex;align-items:center;gap:8px}
+.cmp-rm{cursor:pointer;opacity:.7}
+.cmp-rm:hover{opacity:1}
+.btn-cmp{padding:12px 28px;background:var(--accent);color:var(--white);border:none;border-radius:var(--r-sm);font-family:'Golos Text',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn-cmp:hover{background:var(--accent2)}
+
+/* COMPARISON MODAL */
+.cmp-overlay{display:none;position:fixed;inset:0;background:rgba(30,18,10,.65);z-index:300;overflow-y:auto;padding:40px 20px}
+.cmp-overlay.open{display:block}
+.cmp-modal{background:var(--white);border-radius:var(--r);max-width:1000px;margin:0 auto;padding:40px;position:relative}
+.cmp-close{position:absolute;top:20px;right:24px;font-size:28px;cursor:pointer;color:var(--muted);line-height:1;background:none;border:none}
+.cmp-tbl{width:100%;border-collapse:collapse;margin-top:24px}
+.cmp-tbl th{background:var(--bg2);padding:16px;text-align:left;font-size:16px;font-weight:600}
+.cmp-tbl td{padding:13px 16px;border-bottom:1px solid var(--bg2);font-size:14px}
+.cmp-tbl td:first-child{color:var(--muted);font-size:13px;width:200px}
+.cmp-tbl tr:hover td{background:var(--bg)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{background:var(--white);border-radius:var(--r);padding:32px}
+.why-icon{font-size:40px;margin-bottom:16px}
+.why-title{font-size:20px;margin-bottom:8px}
+.why-desc{font-size:15px;color:var(--muted);line-height:1.6}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.blog-card{background:var(--white);border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border)}
+.blog-img{width:100%;height:140px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:48px}
+.blog-body{padding:24px}
+.blog-tag{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.blog-title{font-size:17px;margin-bottom:10px;line-height:1.35}
+.blog-exc{font-size:14px;color:var(--muted);margin-bottom:16px}
+.blog-link{font-size:14px;font-weight:600;color:var(--accent)}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--white);padding:48px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:12px}
+.footer-logo span{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.5);max-width:300px;line-height:1.6}
+.footer-col h4{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:14px;color:rgba(255,255,255,.7)}
+.footer-col ul li a:hover{color:var(--white);text-decoration:none}
+.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:24px}
+.footer-legal{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer-legal p+p{margin-top:6px}
+
+/* BG HELPERS */
+.bg-white{background:var(--white)}
+.bg-tan{background:var(--bg2)}
+
+/* BURGER */
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2px;background:var(--dark);border-radius:2px;transition:all .25s}
+.nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__mobile{display:none;flex-direction:column;gap:0;background:rgba(245,240,232,.98);border-top:1px solid var(--border);padding:12px 0}
+.nav__mobile.open{display:flex}
+.nav__mobile a{padding:14px 20px;color:var(--dark2);font-size:16px;font-weight:500;border-bottom:1px solid var(--border)}
+.nav__mobile a:last-child{border-bottom:none}
+
+/* QUIZ */
+.quiz-wrap{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);max-width:680px;margin:0 auto;padding:48px 40px}
+.quiz-progress{display:flex;gap:8px;margin-bottom:32px}
+.quiz-step-dot{flex:1;height:4px;background:var(--bg3);border-radius:2px;transition:background .3s}
+.quiz-step-dot.done{background:var(--accent)}
+.quiz-q{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin-bottom:24px}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quiz-opt{padding:18px 20px;border:2px solid var(--border);border-radius:var(--r-sm);background:var(--bg);cursor:pointer;font-family:'Golos Text',sans-serif;font-size:15px;font-weight:500;text-align:left;transition:all .2s;line-height:1.35}
+.quiz-opt:hover,.quiz-opt.selected{border-color:var(--accent);background:#FFF8F5;color:var(--accent)}
+.quiz-opt-icon{font-size:28px;display:block;margin-bottom:8px}
+.quiz-result{text-align:center}
+.quiz-result-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:8px}
+.quiz-result-sub{color:var(--muted);font-size:16px;margin-bottom:28px}
+.quiz-back{background:none;border:1.5px solid var(--border);color:var(--dark2);border-radius:var(--r-sm);padding:10px 20px;font-family:'Golos Text',sans-serif;font-size:14px;cursor:pointer;margin-top:20px;transition:all .2s}
+.quiz-back:hover{border-color:var(--accent);color:var(--accent)}
+
+/* DETAILS MODAL */
+.det-overlay{display:none;position:fixed;inset:0;background:rgba(30,18,10,.65);z-index:300;overflow-y:auto;padding:40px 20px}
+.det-overlay.open{display:block}
+.det-modal{background:var(--white);border-radius:var(--r);max-width:600px;margin:0 auto;padding:40px;position:relative}
+.det-close{position:absolute;top:16px;right:20px;font-size:28px;cursor:pointer;color:var(--muted);line-height:1;background:none;border:none}
+.det-bank{font-size:24px;font-weight:700;margin-bottom:4px}
+.det-tag{color:var(--muted);font-size:15px;margin-bottom:24px}
+.det-section-title{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:20px 0 10px}
+.det-pros,.det-cons{list-style:none;display:flex;flex-direction:column;gap:8px}
+.det-pros li::before{content:'✅ ';font-size:14px}
+.det-cons li::before{content:'⚠️ ';font-size:14px}
+.det-pros li,.det-cons li{font-size:15px;line-height:1.5}
+.det-tariffs{width:100%;border-collapse:collapse;margin-top:8px}
+.det-tariffs th{text-align:left;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:8px 0;border-bottom:2px solid var(--border)}
+.det-tariffs td{padding:12px 0;border-bottom:1px solid var(--bg2);font-size:14px}
+.det-tariffs td:last-child{text-align:right;font-weight:600}
+.det-tariffs td:last-child.free{color:var(--green)}
+.det-cta{display:block;text-align:center;margin-top:24px}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-sm);overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-size:16px;font-weight:600;gap:16px;user-select:none}
+.faq-toggle{font-size:18px;color:var(--accent);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-toggle{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 24px 20px;font-size:15px;color:var(--dark2);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .banks-grid,.fees-grid,.why-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}
+  .calc__inputs,.sc-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .quiz-opts{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .banks-grid,.fees-grid,.why-grid,.blog-grid{grid-template-columns:1fr}
+  .calc__inputs,.sc-grid{grid-template-columns:1fr}
+  .hero__stats{flex-direction:column;gap:16px}
+  .calc-wrap{padding:24px 20px}
+  .cmp-modal{padding:24px 20px}
+  .nav__links{display:none}
+  .nav__burger{display:flex}
+  .quiz-wrap{padding:28px 20px}
+  .quiz-opts{grid-template-columns:1fr}
+  .det-modal{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <div class="nav__logo">РКО<span>.</span>сравни</div>
+      <ul class="nav__links">
+        <li><a href="#catalog">Банки</a></li>
+        <li><a href="#calculator">Калькулятор</a></li>
+        <li><a href="#scenarios">Для кого</a></li>
+        <li><a href="#hidden-fees">Скрытые комиссии</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quiz" class="nav__cta">Подобрать счёт</a></li>
+      </ul>
+      <button class="nav__burger" id="navBurger" aria-label="Меню" onclick="toggleBurger()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" id="navMobile">
+      <a href="#catalog" onclick="closeBurger()">Банки</a>
+      <a href="#calculator" onclick="closeBurger()">Калькулятор</a>
+      <a href="#scenarios" onclick="closeBurger()">Для кого</a>
+      <a href="#hidden-fees" onclick="closeBurger()">Скрытые комиссии</a>
+      <a href="#quiz" onclick="closeBurger()" style="color:var(--accent);font-weight:600">Подобрать счёт →</a>
+    </nav>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__eyebrow">Обновлено 4 октября 2026</div>
+    <h1 class="hero__title">РКО для бизнеса:<br><em>сравните 6 банков</em> за 2 минуты</h1>
+    <p class="hero__sub">Прозрачное сравнение без мелкого шрифта. Калькулятор считает реальную стоимость под ваш оборот и количество платежей.</p>
+    <div class="hero__btns">
+      <button class="scenario-pill active" onclick="filterCatalog('all',this)">Все банки</button>
+      <button class="scenario-pill" onclick="filterCatalog('ip',this)">ИП на УСН</button>
+      <button class="scenario-pill" onclick="filterCatalog('ooo',this)">ООО</button>
+      <button class="scenario-pill" onclick="filterCatalog('self',this)">Самозанятый</button>
+      <button class="scenario-pill" onclick="filterCatalog('patent',this)">ИП на патенте</button>
+    </div>
+    <div class="hero__stats">
+      <div><div class="stat-val">6</div><div class="stat-lbl">банков в сравнении</div></div>
+      <div><div class="stat-val">20+</div><div class="stat-lbl">параметров сравнения</div></div>
+      <div><div class="stat-val">0 ₽</div><div class="stat-lbl">стоимость нашего сервиса</div></div>
+      <div><div class="stat-val">2 мин</div><div class="stat-lbl">до выбора банка</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALCULATOR ─────────────────────────────────────────── -->
+<section class="section" id="calculator">
+  <div class="container">
+    <h2 class="section-title">Калькулятор стоимости РКО</h2>
+    <p class="section-sub">Введите параметры — калькулятор подберёт самый дешёвый тариф в каждом банке и покажет экономию за год.</p>
+    <div class="calc-wrap">
+      <div class="calc__inputs">
+        <div class="calc__field">
+          <label>Оборот в месяц</label>
+          <div class="calc__val" id="dOborot">500 000 ₽</div>
+          <input type="range" id="sOborot" min="50000" max="5000000" step="50000" value="500000" oninput="calcUpdate()">
+        </div>
+        <div class="calc__field">
+          <label>Платежей в месяц</label>
+          <div class="calc__val" id="dPay">20 шт.</div>
+          <input type="range" id="sPay" min="1" max="200" step="1" value="20" oninput="calcUpdate()">
+        </div>
+        <div class="calc__field">
+          <label>Снятие наличных/мес</label>
+          <div class="calc__val" id="dCash">30 000 ₽</div>
+          <input type="range" id="sCash" min="0" max="300000" step="5000" value="30000" oninput="calcUpdate()">
+        </div>
+      </div>
+      <div>
+        <div style="font-size:16px;font-weight:600;color:var(--dark2);margin-bottom:4px">Стоимость в месяц — от выгодного к дорогому:</div>
+        <table class="calc__tbl">
+          <thead><tr>
+            <th>Банк</th><th>Лучший тариф</th><th>В месяц</th><th>В год</th>
+          </tr></thead>
+          <tbody id="calcBody"></tbody>
+        </table>
+        <div class="calc__note">* Расчёт приблизителен. Условия зависят от тарифа и уточняются на сайте банка. Данные актуальны на октябрь 2026.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CATALOG ──────────────────────────────────────────────── -->
+<section class="section bg-tan" id="catalog">
+  <div class="container">
+    <h2 class="section-title">Каталог РКО</h2>
+    <p class="section-sub">Подберите расчётный счёт под ваш тип бизнеса</p>
+    <div class="filter-bar" id="filterBar">
+      <button class="chip active" onclick="filterCatalog('all',this)">Все банки</button>
+      <button class="chip" onclick="filterCatalog('ip',this)">ИП на УСН</button>
+      <button class="chip" onclick="filterCatalog('ooo',this)">ООО</button>
+      <button class="chip" onclick="filterCatalog('self',this)">Самозанятый</button>
+      <button class="chip" onclick="filterCatalog('patent',this)">ИП на патенте</button>
+      <button class="chip" onclick="filterCatalog('nko',this)">НКО</button>
+    </div>
+    <div class="banks-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- ── SCENARIOS ─────────────────────────────────────────────── -->
+<section class="section" id="scenarios">
+  <div class="container">
+    <h2 class="section-title">Подберём РКО по вашему бизнесу</h2>
+    <p class="section-sub">Выберите сценарий — покажем подходящие банки и объясним почему.</p>
+    <div class="sc-grid">
+      <div class="sc-card" onclick="showScenario('startup',this)">
+        <div class="sc-icon">🚀</div>
+        <div class="sc-title">Только открываюсь</div>
+        <div class="sc-desc">ИП или ООО до 6 месяцев, нужно бесплатное РКО для старта</div>
+      </div>
+      <div class="sc-card" onclick="showScenario('cashout',this)">
+        <div class="sc-icon">💵</div>
+        <div class="sc-title">Много снимаю наличных</div>
+        <div class="sc-desc">Регулярные снятия — важна низкая комиссия на кэш</div>
+      </div>
+      <div class="sc-card" onclick="showScenario('payments',this)">
+        <div class="sc-icon">📤</div>
+        <div class="sc-title">Много платежей</div>
+        <div class="sc-desc">50+ платежей в месяц поставщикам и партнёрам</div>
+      </div>
+      <div class="sc-card" onclick="showScenario('market',this)">
+        <div class="sc-icon">🛒</div>
+        <div class="sc-title">Продаю на маркетплейсах</div>
+        <div class="sc-desc">Wildberries, Ozon, Яндекс Маркет — нужны быстрые выплаты</div>
+      </div>
+    </div>
+
+    <div id="sc-startup" class="sc-result">
+      <div class="sc-result-title">Лучшие банки для старта</div>
+      <div class="sc-result-sub">Бесплатное открытие + нулевое обслуживание в первые месяцы</div>
+      <div class="banks-grid" id="sc-startup-grid"></div>
+    </div>
+    <div id="sc-cashout" class="sc-result">
+      <div class="sc-result-title">Лучшие банки при частом снятии наличных</div>
+      <div class="sc-result-sub">Минимальные комиссии на снятие</div>
+      <div class="banks-grid" id="sc-cashout-grid"></div>
+    </div>
+    <div id="sc-payments" class="sc-result">
+      <div class="sc-result-title">Лучшие банки при большом числе платежей</div>
+      <div class="sc-result-sub">Максимум бесплатных платежей в месяц</div>
+      <div class="banks-grid" id="sc-payments-grid"></div>
+    </div>
+    <div id="sc-market" class="sc-result">
+      <div class="sc-result-title">Лучшие банки для маркетплейс-продавцов</div>
+      <div class="sc-result-sub">Быстрые выплаты и интеграция с маркетплейсами</div>
+      <div class="banks-grid" id="sc-market-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ─────────────────────────────────────────────── -->
+<section class="section bg-tan">
+  <div class="container">
+    <h2 class="section-title">Почему мы</h2>
+    <p class="section-sub">Три причины выбрать наш сервис</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <h3 class="why-title">Честное сравнение</h3>
+        <p class="why-desc">Раскрываем скрытые комиссии, которые банки прячут в тарифных сетках. Никакого мелкого шрифта — только реальные цифры.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧮</div>
+        <h3 class="why-title">Персональный расчёт</h3>
+        <p class="why-desc">Калькулятор считает под ваш конкретный оборот, количество платежей и снятие наличных — не «среднюю температуру», а вашу ситуацию.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3 class="why-title">Только топовые банки</h3>
+        <p class="why-desc">6 банков из топ-30 по надёжности с лицензией ЦБ РФ. Все работают с ИП и ООО и открывают счёт онлайн.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HIDDEN FEES ────────────────────────────────────────── -->
+<section class="section" id="hidden-fees">
+  <div class="container">
+    <h2 class="section-title">⚠️ Скрытые комиссии банков</h2>
+    <p class="section-sub">То, что не выносят на главную страницу. Нажмите на банк — увидите реальные цифры.</p>
+    <div class="fees-grid" id="feesGrid"></div>
+  </div>
+</section>
+
+<!-- ── BLOG ──────────────────────────────────────────────── -->
+<section class="section bg-tan" id="blog">
+  <div class="container">
+    <h2 class="section-title">Полезные статьи</h2>
+    <p class="section-sub">Объясняем, как не переплатить за РКО</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img">📋</div>
+        <div class="blog-body">
+          <div class="blog-tag">ИП и ООО</div>
+          <h3 class="blog-title">Как выбрать РКО для ИП в 2026 году: полное руководство</h3>
+          <p class="blog-exc">На что смотреть при выборе банка, какие тарифы скрывают реальную стоимость.</p>
+          <a href="#" class="blog-link">Читать →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">🔎</div>
+        <div class="blog-body">
+          <div class="blog-tag">Комиссии</div>
+          <h3 class="blog-title">Скрытые комиссии банков: 7 пунктов, которые съедят ваш бюджет</h3>
+          <p class="blog-exc">Снятие наличных, переводы физлицам, платежи в бюджет — где банки зарабатывают.</p>
+          <a href="#" class="blog-link">Читать →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">🏢</div>
+        <div class="blog-body">
+          <div class="blog-tag">ООО</div>
+          <h3 class="blog-title">РКО для ООО: 5 критериев выбора, о которых молчат банки</h3>
+          <p class="blog-exc">Платежи, зарплатный проект, ВЭД — что важно учесть при открытии ООО.</p>
+          <a href="#" class="blog-link">Читать →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────── -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <p class="section-sub">Отвечаем на главные вопросы о расчётно-кассовом обслуживании</p>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ── QUIZ ───────────────────────────────────────────────── -->
+<section class="section" id="quiz">
+  <div class="container">
+    <h2 class="section-title">Подберём РКО за 3 шага</h2>
+    <p class="section-sub">Ответьте на 3 вопроса — получите персональную рекомендацию.</p>
+    <div class="quiz-wrap">
+      <div class="quiz-progress">
+        <div class="quiz-step-dot" id="qd1"></div>
+        <div class="quiz-step-dot" id="qd2"></div>
+        <div class="quiz-step-dot" id="qd3"></div>
+      </div>
+      <!-- Step 1 -->
+      <div id="qs1">
+        <div class="quiz-q">Шаг 1 из 3 — Тип бизнеса</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="quizPick(1,'ip')"><span class="quiz-opt-icon">👤</span>ИП</button>
+          <button class="quiz-opt" onclick="quizPick(1,'ooo')"><span class="quiz-opt-icon">🏢</span>ООО</button>
+          <button class="quiz-opt" onclick="quizPick(1,'self')"><span class="quiz-opt-icon">💼</span>Самозанятый</button>
+          <button class="quiz-opt" onclick="quizPick(1,'patent')"><span class="quiz-opt-icon">📄</span>ИП на патенте</button>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div id="qs2" style="display:none">
+        <div class="quiz-q">Шаг 2 из 3 — Оборот в месяц</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="quizPick(2,'low')"><span class="quiz-opt-icon">💸</span>До 300 000 ₽</button>
+          <button class="quiz-opt" onclick="quizPick(2,'mid')"><span class="quiz-opt-icon">📈</span>300 000 — 1 млн ₽</button>
+          <button class="quiz-opt" onclick="quizPick(2,'high')"><span class="quiz-opt-icon">🚀</span>Свыше 1 млн ₽</button>
+        </div>
+        <button class="quiz-back" onclick="quizBack(1)">← Назад</button>
+      </div>
+      <!-- Step 3 -->
+      <div id="qs3" style="display:none">
+        <div class="quiz-q">Шаг 3 из 3 — Что важнее всего?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="quizPick(3,'price')"><span class="quiz-opt-icon">💰</span>Минимальная цена</button>
+          <button class="quiz-opt" onclick="quizPick(3,'payments')"><span class="quiz-opt-icon">📤</span>Много платежей</button>
+          <button class="quiz-opt" onclick="quizPick(3,'cashback')"><span class="quiz-opt-icon">🎁</span>Кэшбэк и бонусы</button>
+          <button class="quiz-opt" onclick="quizPick(3,'cash')"><span class="quiz-opt-icon">🏧</span>Снятие наличных</button>
+        </div>
+        <button class="quiz-back" onclick="quizBack(2)">← Назад</button>
+      </div>
+      <!-- Result -->
+      <div id="qs-result" style="display:none" class="quiz-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON BAR (sticky bottom) ───────────────────── -->
+<div class="cmp-bar" id="cmpBar">
+  <span style="font-size:14px;color:rgba(255,255,255,.6);white-space:nowrap">Сравниваем:</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="btn-cmp" onclick="openCmpModal()">Сравнить →</button>
+  <button onclick="clearCmp()" style="background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:22px;line-height:1;padding:0 4px">✕</button>
+</div>
+
+<!-- ── COMPARISON MODAL ──────────────────────────────────── -->
+<div class="cmp-overlay" id="cmpOverlay" onclick="closeCmpModal(event)">
+  <div class="cmp-modal">
+    <button class="cmp-close" onclick="closeCmpModal()">✕</button>
+    <h2 style="margin-bottom:8px">Сравнение банков</h2>
+    <p style="color:var(--muted);font-size:14px">По базовым тарифам. Для точного расчёта используйте калькулятор выше.</p>
+    <div id="cmpContent"></div>
+    <p style="font-size:12px;color:var(--muted);margin-top:16px">* Условия уточняйте на официальных сайтах банков.</p>
+  </div>
+</div>
+
+<!-- ── DETAILS MODAL ─────────────────────────────────────── -->
+<div class="det-overlay" id="detOverlay" onclick="closeDetModal(event)">
+  <div class="det-modal">
+    <button class="det-close" onclick="closeDetModal()">✕</button>
+    <div id="detContent"></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">РКО<span>.</span>сравни</div>
+        <p class="footer-desc">Независимый сервис сравнения расчётно-кассового обслуживания для ИП и ООО. Данные обновляются ежемесячно.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Банки</h4>
+        <ul>
+          <li><a href="#catalog">Альфа-Банк РКО</a></li>
+          <li><a href="#catalog">Промсвязьбанк РКО</a></li>
+          <li><a href="#catalog">Озон Банк РКО</a></li>
+          <li><a href="#catalog">Уралсиб РКО</a></li>
+          <li><a href="#catalog">Точка РКО</a></li>
+          <li><a href="#catalog">Т-Банк РКО</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Сервис</h4>
+        <ul>
+          <li><a href="#calculator">Калькулятор</a></li>
+          <li><a href="#scenarios">Подбор по бизнесу</a></li>
+          <li><a href="#hidden-fees">Скрытые комиссии</a></li>
+          <li><a href="#blog">Статьи</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-hr">
+    <div class="footer-legal">
+      <p>Сайт носит информационный характер и не является офертой. Условия уточняйте на сайте банка.</p>
+      <p>Материалы, отмеченные «Реклама», являются рекламными. Рекламодатели: ПАО «Альфа-Банк», ПАО «ПСБ», ООО «Озон Банк», ПАО «Уралсиб», ООО «Точка», АО «ТБанк».</p>
+      <p>Реклама. Информация о рекламодателе: ИП Кузлякин Валерий Юрьевич. ИНН: 550723498810. ОГРНИП: 326554300016144.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// ДАННЫЕ БАНКОВ
+// TODO: замените ССЫЛКА_* на реальные реферальные ссылки из RKO Group
+// TODO: замените ERID_* на реальные erid из кабинета рекламодателя
+// ─────────────────────────────────────────────────────────────────
+const BANKS = {
+  alfa: {
+    id:'alfa', name:'Альфа-Банк',
+    tagline:'Для роста и масштабирования',
+    badge:'Холд 14 дней', badgeAccent:false,
+    types:['ip','ooo','patent'],
+    features:[
+      {l:'Открытие',v:'онлайн за 1 день'},
+      {l:'Бизнес-карта',v:'бесплатно'},
+      {l:'Снятие нал.',v:'от 1,9%'},
+      {l:'Доп. платёж',v:'от 39 ₽/шт'},
+    ],
+    tariffs:[
+      {name:'Стартовый',price:0,   pay:3,   extra:89, cash:1.9},
+      {name:'Набирающий',price:1990,pay:50,  extra:39, cash:1.5},
+      {name:'Умеренный', price:3990,pay:100, extra:19, cash:1.0},
+    ],
+    hidden:[
+      {l:'Снятие наличных',      v:'1,9% (мин. 150 ₽)', warn:true},
+      {l:'Переводы физлицам',    v:'1% (мин. 50 ₽)',    warn:true},
+      {l:'SMS-уведомления',      v:'99 ₽/мес',          warn:false},
+      {l:'Обсл. при нулевом обороте',v:'как платный тариф',warn:true},
+    ],
+    pros:['Открытие за 1 день','Бесплатная бизнес-карта','Поддержка 24/7'],
+    cons:['Дорогое снятие наличных','Платные SMS'],
+    link:'https://rko-group.ru/s/G1TvhblX',
+    erid:'ERID_ALFA',
+    scores:{startup:1,cashout:3,payments:2,market:3},
+  },
+  psb: {
+    id:'psb', name:'Промсвязьбанк',
+    tagline:'Кэшбэк до 5% + гос. программы',
+    badge:'Выбор ООО', badgeAccent:false,
+    types:['ip','ooo','nko'],
+    features:[
+      {l:'Открытие',   v:'онлайн бесплатно'},
+      {l:'Кэшбэк',     v:'до 5% на карту'},
+      {l:'Снятие нал.',v:'от 1,5%'},
+      {l:'Доп. платёж',v:'от 10 ₽/шт'},
+    ],
+    tariffs:[
+      {name:'Ноль Плюс',price:0,    pay:5,   extra:29, cash:1.5},
+      {name:'Мини',     price:500,  pay:25,  extra:25, cash:1.5},
+      {name:'Опти',     price:2500, pay:100, extra:15, cash:1.0},
+      {name:'Макси',    price:4500, pay:300, extra:10, cash:0.8},
+    ],
+    hidden:[
+      {l:'Снятие наличных',        v:'1,5% (мин. 100 ₽)',warn:true},
+      {l:'Переводы физлицам',      v:'1% (мин. 50 ₽)',   warn:true},
+      {l:'Валютный контроль',      v:'0,12% от суммы',   warn:false},
+      {l:'Обсл. при нулевом обороте',v:'полный тариф',   warn:true},
+    ],
+    pros:['Кэшбэк до 5%','Гос. программы поддержки','Самые дешёвые доп. платежи'],
+    cons:['Снятие дорого на базовом','Меньше digital-функций'],
+    link:'https://rko-group.ru/s/TkezzW3L',
+    erid:'ERID_PSB',
+    scores:{startup:2,cashout:2,payments:1,market:3},
+  },
+  ozon: {
+    id:'ozon', name:'Озон Банк',
+    tagline:'Создан для продавцов маркетплейсов',
+    badge:'Маркетплейсы', badgeAccent:true,
+    types:['ip','ooo','self'],
+    features:[
+      {l:'Открытие',      v:'15 минут онлайн'},
+      {l:'На остаток',    v:'2% годовых'},
+      {l:'Снятие нал.',   v:'от 1,5%'},
+      {l:'Выплаты Ozon',  v:'мгновенно'},
+    ],
+    tariffs:[
+      {name:'Базовый',    price:0,   pay:10,  extra:29, cash:1.5},
+      {name:'Оптимальный',price:990, pay:50,  extra:19, cash:1.0},
+    ],
+    hidden:[
+      {l:'Снятие наличных',          v:'1,5% (мин. 100 ₽)',   warn:true},
+      {l:'Переводы физлицам-нерез.',  v:'доп. комиссия',       warn:true},
+      {l:'Платежи вне партнёр. сети', v:'29 ₽/шт (базовый)',  warn:false},
+    ],
+    pros:['Мгновенные выплаты с Ozon','2% на остаток','Открытие 15 минут'],
+    cons:['Лучшие условия — для Ozon-продавцов','Ограниченный ВЭД'],
+    link:'https://rko-group.ru/s/8xQCZ3Yu',
+    erid:'ERID_OZON',
+    scores:{startup:2,cashout:3,payments:3,market:1},
+  },
+  uralsib: {
+    id:'uralsib', name:'Уралсиб',
+    tagline:'Надёжный банк с понятными тарифами',
+    badge:'CR 28%', badgeAccent:false,
+    types:['ip','ooo'],
+    features:[
+      {l:'Открытие',   v:'онлайн + 1 день'},
+      {l:'Старт ИП',   v:'0 ₽/мес'},
+      {l:'Снятие нал.',v:'от 0,7%'},
+      {l:'Доп. платёж',v:'от 25 ₽/шт'},
+    ],
+    tariffs:[
+      {name:'Старт ИП',price:0,    pay:3,   extra:79, cash:1.5},
+      {name:'Бизнес',  price:1500, pay:50,  extra:39, cash:1.0},
+      {name:'Профи',   price:3500, pay:150, extra:25, cash:0.7},
+    ],
+    hidden:[
+      {l:'Снятие наличных',         v:'1,5% (мин. 150 ₽)',warn:true},
+      {l:'Переводы физлицам',       v:'1% мин. 50 ₽',     warn:true},
+      {l:'Платёж в выходные/прздн.',v:'+99 ₽',            warn:false},
+    ],
+    pros:['0 ₽ для новых ИП','Высокая конверсия (CR 28%)','Региональная поддержка'],
+    cons:['Меньше digital','Чуть медленнее онлайн-банков'],
+    link:'https://rko-group.ru/s/MQp5k58r',
+    erid:'ERID_URALSIB',
+    scores:{startup:1,cashout:1,payments:3,market:3},
+  },
+  tochka: {
+    id:'tochka', name:'Точка',
+    tagline:'Лучший онлайн-банк для ИП',
+    badge:'0 ₽ навсегда', badgeAccent:true,
+    types:['ip','self','patent'],
+    features:[
+      {l:'Открытие',       v:'онлайн 20 минут'},
+      {l:'Тариф «Ноль»',   v:'0 ₽ без условий'},
+      {l:'Снятие нал.',    v:'от 0,7%'},
+      {l:'Бесплатных пл.', v:'10 шт./мес'},
+    ],
+    tariffs:[
+      {name:'Ноль',        price:0,    pay:10,   extra:59, cash:1.5},
+      {name:'Продвинутый', price:1200, pay:100,  extra:29, cash:1.0},
+      {name:'Максимальный',price:3200, pay:9999, extra:0,  cash:0.7},
+    ],
+    hidden:[
+      {l:'Снятие нал. на «Ноль»',     v:'1,5% (мин. 100 ₽)',warn:true},
+      {l:'Переводы физлицам',          v:'1% мин. 50 ₽',     warn:true},
+      {l:'Бюдж. платежи на «Ноль»',   v:'99 ₽/шт',          warn:true},
+    ],
+    pros:['Реальный 0 ₽ без оборота','Отличное приложение','24/7 онлайн'],
+    cons:['Нет физических офисов','Бюджетные платежи платные на «Ноль»'],
+    link:'https://rko-group.ru/s/siWbVV6I',
+    erid:'ERID_TOCHKA',
+    scores:{startup:1,cashout:1,payments:2,market:2},
+  },
+  tbank: {
+    id:'tbank', name:'Т-Банк',
+    tagline:'Самый технологичный банк для бизнеса',
+    badge:'★ Топ выбор', badgeAccent:true,
+    types:['ip','ooo','self','patent'],
+    features:[
+      {l:'Открытие',      v:'онлайн 1 час'},
+      {l:'Бухгалтерия',   v:'встроена, бесплатно'},
+      {l:'Снятие нал.',   v:'от 0,7%'},
+      {l:'Кэшбэк',        v:'до 2% на карту'},
+    ],
+    tariffs:[
+      {name:'Простой',       price:0,    pay:3,   extra:49, cash:1.5},
+      {name:'Продвинутый',   price:490,  pay:50,  extra:29, cash:1.0},
+      {name:'Профессионал',  price:1990, pay:150, extra:19, cash:0.7},
+    ],
+    hidden:[
+      {l:'Снятие нал. на «Простом»',   v:'1,5% мин. 99 ₽',warn:true},
+      {l:'Переводы физлицам сверх лим.',v:'1,5%',          warn:true},
+      {l:'Эквайринг',                  v:'1,4–2,7%',       warn:false},
+      {l:'SMS на «Простом»',           v:'69 ₽/мес',       warn:false},
+    ],
+    pros:['Лучшее мобильное приложение','Зарплатный проект в 1 клик','Встроенная бухгалтерия'],
+    cons:['Нет физических офисов','Дорогое снятие на «Простом»'],
+    link:'ССЫЛКА_TBANK_RKO',
+    erid:'ERID_TBANK',
+    scores:{startup:1,cashout:3,payments:1,market:2},
+  },
+};
+const ORDER = ['alfa','psb','ozon','uralsib','tochka','tbank'];
+
+// ─────────────────────────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────────────────────────
+function rub(n){ return new Intl.NumberFormat('ru-RU').format(Math.round(n))+' ₽' }
+
+function bestTariff(bank, pays, cash){
+  let best=Infinity, name='';
+  for(const t of bank.tariffs){
+    const extra = Math.max(0, pays - (t.pay>=9999?9999:t.pay));
+    const cost  = t.price + extra*t.extra + cash*t.cash/100;
+    if(cost<best){ best=cost; name=t.name; }
+  }
+  return {cost:best, name};
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CALCULATOR
+// ─────────────────────────────────────────────────────────────────
+function calcUpdate(){
+  const ob  = +document.getElementById('sOborot').value;
+  const pay = +document.getElementById('sPay').value;
+  const cash= +document.getElementById('sCash').value;
+  document.getElementById('dOborot').textContent = rub(ob);
+  document.getElementById('dPay').textContent    = pay+' шт.';
+  document.getElementById('dCash').textContent   = rub(cash);
+
+  const rows = ORDER.map(id=>{
+    const b = BANKS[id];
+    const {cost,name} = bestTariff(b,pay,cash);
+    return {id,bname:b.name,cost,tariff:name};
+  }).sort((a,b)=>a.cost-b.cost);
+
+  const tbody = document.getElementById('calcBody');
+  tbody.innerHTML = rows.map((r,i)=>`
+    <tr${i===0?' class="best"':''}>
+      <td><strong>${r.bname}</strong>${i===0?'<span class="badge-best">Выгоднее всего</span>':''}</td>
+      <td>${r.tariff}</td>
+      <td>${rub(r.cost)}</td>
+      <td>${rub(r.cost*12)}</td>
+    </tr>`).join('');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// BANK CARD RENDER
+// ─────────────────────────────────────────────────────────────────
+function cardHTML(b){
+  const feats = b.features.map(f=>`
+    <div class="card-feat">
+      <div class="card-feat-lbl">${f.l}</div>
+      <div class="card-feat-val">${f.v}</div>
+    </div>`).join('');
+  const tariffs = b.tariffs.map(t=>`
+    <div class="tariff-row">
+      <span>${t.name}</span>
+      <span class="tariff-price${t.price===0?' free':''}">${t.price===0?'0 ₽ / бесплатно':rub(t.price)+'/мес'}</span>
+    </div>`).join('');
+  return `
+  <div class="bank-card" data-bank="${b.id}" data-types="${b.types.join(',')}">
+    <div class="card-badge${b.badgeAccent?' ac':''}">${b.badge}</div>
+    <div class="card-name">${b.name}</div>
+    <div class="card-tag">${b.tagline}</div>
+    <div class="card-features">${feats}</div>
+    <div class="card-tariffs">${tariffs}</div>
+    <div class="card-actions">
+      <a href="${b.link}" target="_blank" rel="noopener sponsored" class="btn-primary">Открыть счёт →</a>
+      <button class="btn-sec" onclick="toggleDetails('${b.id}',this)">Детали</button>
+    </div>
+    <div class="card-admark">Реклама · erid: ${b.erid}</div>
+    <label class="cmp-chk">
+      <input type="checkbox" onchange="toggleCmp('${b.id}',this)"> Добавить в сравнение
+    </label>
+  </div>`;
+}
+
+function renderGrid(containerId, filter='all'){
+  const el = document.getElementById(containerId);
+  if(!el) return;
+  const ids = filter==='all'
+    ? ORDER
+    : ORDER.filter(id=>BANKS[id].types.includes(filter));
+  el.innerHTML = ids.length ? ids.map(id=>cardHTML(BANKS[id])).join('') :
+    '<p style="color:var(--muted);padding:24px">Нет банков для этого типа бизнеса.</p>';
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CATALOG FILTER
+// ─────────────────────────────────────────────────────────────────
+function filterCatalog(type, btn){
+  document.querySelectorAll('.chip,.scenario-pill').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('#catalogGrid .bank-card').forEach(card=>{
+    const types = (card.dataset.types||'').split(',');
+    card.classList.toggle('hidden', type!=='all' && !types.includes(type));
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// HIDDEN FEES
+// ─────────────────────────────────────────────────────────────────
+function renderFees(){
+  document.getElementById('feesGrid').innerHTML = ORDER.map(id=>{
+    const b = BANKS[id];
+    const rows = b.hidden.map(h=>`
+      <div class="fee-row">
+        <span class="fee-lbl">${h.l}</span>
+        <span class="fee-val${h.warn?' warn':''}">${h.v}</span>
+      </div>`).join('');
+    return `
+    <div class="fee-card" id="fee-${id}">
+      <div class="fee-hdr" onclick="toggleFee('${id}')">
+        <span class="fee-hdr-name">${b.name}</span>
+        <span class="fee-toggle">▼</span>
+      </div>
+      <div class="fee-body">${rows}</div>
+    </div>`;
+  }).join('');
+}
+function toggleFee(id){ document.getElementById('fee-'+id).classList.toggle('open') }
+
+// ─────────────────────────────────────────────────────────────────
+// SCENARIOS
+// ─────────────────────────────────────────────────────────────────
+function showScenario(sc, card){
+  document.querySelectorAll('.sc-card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.sc-result').forEach(r=>r.classList.remove('show'));
+  card.classList.add('active');
+  const el = document.getElementById('sc-'+sc);
+  if(el){ el.classList.add('show'); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+function renderScenarios(){
+  const map = {startup:'startup',cashout:'cashout',payments:'payments',market:'market'};
+  Object.keys(map).forEach(sc=>{
+    const ids = ORDER
+      .filter(id=>BANKS[id].scores[sc]<=2)
+      .sort((a,b)=>BANKS[a].scores[sc]-BANKS[b].scores[sc])
+      .slice(0,3);
+    const el = document.getElementById('sc-'+sc+'-grid');
+    if(el) el.innerHTML = ids.map(id=>cardHTML(BANKS[id])).join('');
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// COMPARISON
+// ─────────────────────────────────────────────────────────────────
+let cmpList = [];
+
+function toggleCmp(id, cb){
+  if(cb.checked){
+    if(cmpList.length>=3){ cb.checked=false; alert('Максимум 3 банка для сравнения'); return; }
+    cmpList.push(id);
+  } else {
+    cmpList = cmpList.filter(x=>x!==id);
+  }
+  updateCmpBar();
+}
+
+function updateCmpBar(){
+  const bar = document.getElementById('cmpBar');
+  const items = document.getElementById('cmpItems');
+  if(!cmpList.length){ bar.classList.remove('show'); return; }
+  bar.classList.add('show');
+  items.innerHTML = cmpList.map(id=>`
+    <div class="cmp-item">
+      ${BANKS[id].name}
+      <span class="cmp-rm" onclick="removeCmp('${id}')">✕</span>
+    </div>`).join('');
+}
+
+function removeCmp(id){
+  cmpList = cmpList.filter(x=>x!==id);
+  document.querySelectorAll(`.bank-card[data-bank="${id}"] .cmp-chk input`).forEach(cb=>cb.checked=false);
+  updateCmpBar();
+}
+
+function clearCmp(){
+  cmpList=[];
+  document.querySelectorAll('.cmp-chk input').forEach(cb=>cb.checked=false);
+  updateCmpBar();
+}
+
+function openCmpModal(){
+  if(cmpList.length<2){ alert('Выберите минимум 2 банка'); return; }
+  const banks = cmpList.map(id=>BANKS[id]);
+  const params = [
+    ['Бесплатный тариф',       b=>b.tariffs[0].price===0?'✅ Есть':'❌ Нет'],
+    ['Мин. цена/мес',          b=>b.tariffs[0].price===0?'0 ₽':rub(b.tariffs[0].price)],
+    ['Бесплатных платежей',    b=>b.tariffs[0].pay>=9999?'Безлимит':b.tariffs[0].pay+' шт.'],
+    ['Доп. платёж (базовый)',  b=>b.tariffs[0].extra+' ₽/шт'],
+    ['Снятие нал. (базовый)',  b=>b.tariffs[0].cash+'%'],
+    ['Открытие',               b=>b.features[0].v],
+    ['Процент на остаток',     b=>b.id==='ozon'?'2%':'—'],
+    ['Встр. бухгалтерия',      b=>b.id==='tbank'?'✅ Да':'—'],
+    ['Кэшбэк',                 b=>b.id==='psb'||b.id==='tbank'?'Есть':'—'],
+    ['Типы бизнеса',           b=>b.types.join(', ')],
+  ];
+  const hdrs = ['<th>Параметр</th>',...banks.map(b=>`<th>${b.name}</th>`)].join('');
+  const rows = params.map(([lbl,fn])=>{
+    const cells = banks.map(b=>`<td>${fn(b)}</td>`).join('');
+    return `<tr><td>${lbl}</td>${cells}</tr>`;
+  }).join('');
+  document.getElementById('cmpContent').innerHTML = `
+    <table class="cmp-tbl"><thead><tr>${hdrs}</tr></thead><tbody>${rows}</tbody></table>`;
+  document.getElementById('cmpOverlay').classList.add('open');
+}
+
+function closeCmpModal(e){
+  if(!e || e.target===document.getElementById('cmpOverlay') || e.target.classList.contains('cmp-close'))
+    document.getElementById('cmpOverlay').classList.remove('open');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// DETAILS MODAL
+// ─────────────────────────────────────────────────────────────────
+function toggleDetails(id){
+  const b = BANKS[id];
+  if(!b) return;
+  const pros = b.pros.map(p=>`<li>${p}</li>`).join('');
+  const cons = b.cons.map(c=>`<li>${c}</li>`).join('');
+  const tariffRows = b.tariffs.map(t=>`
+    <tr>
+      <td>${t.name}</td>
+      <td>${t.pay>=9999?'Безлимит':t.pay+' шт.'} бесп. плат.</td>
+      <td class="${t.price===0?'free':''}">${t.price===0?'0 ₽':rub(t.price)+'/мес'}</td>
+    </tr>`).join('');
+  document.getElementById('detContent').innerHTML = `
+    <div class="det-bank">${b.name}</div>
+    <div class="det-tag">${b.tagline}</div>
+    <div class="det-section-title">Преимущества</div>
+    <ul class="det-pros">${pros}</ul>
+    <div class="det-section-title">Стоит учесть</div>
+    <ul class="det-cons">${cons}</ul>
+    <div class="det-section-title">Тарифы</div>
+    <table class="det-tariffs">
+      <thead><tr><th>Тариф</th><th>Платежи</th><th>Цена</th></tr></thead>
+      <tbody>${tariffRows}</tbody>
+    </table>
+    <a href="${b.link}" target="_blank" rel="noopener sponsored" class="btn-primary det-cta">Открыть счёт в ${b.name} →</a>
+    <p class="card-admark" style="margin-top:12px">Реклама · erid: ${b.erid}</p>`;
+  document.getElementById('detOverlay').classList.add('open');
+}
+function closeDetModal(e){
+  if(!e || e.target===document.getElementById('detOverlay') || e.target.classList.contains('det-close'))
+    document.getElementById('detOverlay').classList.remove('open');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// BURGER
+// ─────────────────────────────────────────────────────────────────
+function toggleBurger(){
+  const btn = document.getElementById('navBurger');
+  const menu = document.getElementById('navMobile');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function closeBurger(){
+  document.getElementById('navBurger').classList.remove('open');
+  document.getElementById('navMobile').classList.remove('open');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// QUIZ
+// ─────────────────────────────────────────────────────────────────
+const quizAnswers = {};
+const QUIZ_REC = {
+  ip:     { price:'tochka',  payments:'psb',    cashback:'psb',  cash:'uralsib' },
+  ooo:    { price:'psb',     payments:'psb',    cashback:'psb',  cash:'uralsib' },
+  self:   { price:'tochka',  payments:'ozon',   cashback:'psb',  cash:'tochka'  },
+  patent: { price:'tochka',  payments:'tochka', cashback:'tbank',cash:'tochka'  },
+};
+
+function quizPick(step, val){
+  quizAnswers[step] = val;
+  document.querySelectorAll(`#qs${step} .quiz-opt`).forEach(b=>b.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById(`qd${step}`).classList.add('done');
+  setTimeout(()=>{
+    document.getElementById('qs'+step).style.display='none';
+    if(step<3){
+      document.getElementById('qs'+(step+1)).style.display='block';
+    } else {
+      showQuizResult();
+    }
+  },300);
+}
+
+function quizBack(toStep){
+  document.getElementById('qs'+(toStep+1)).style.display='none';
+  document.getElementById('qd'+(toStep+1)).classList.remove('done');
+  document.getElementById('qs'+toStep).style.display='block';
+}
+
+function showQuizResult(){
+  const type = quizAnswers[1];
+  const priority = quizAnswers[3];
+  const bankId = (QUIZ_REC[type]||QUIZ_REC.ip)[priority] || 'tochka';
+  const b = BANKS[bankId];
+  const el = document.getElementById('qs-result');
+  el.style.display='block';
+  el.innerHTML = `
+    <div style="font-size:48px;margin-bottom:12px">🎯</div>
+    <div class="quiz-result-title">Рекомендуем: ${b.name}</div>
+    <div class="quiz-result-sub">${b.tagline}</div>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
+      ${b.features.map(f=>`<div style="text-align:center"><div style="font-size:12px;color:var(--muted)">${f.l}</div><div style="font-weight:600">${f.v}</div></div>`).join('')}
+    </div>
+    <a href="${b.link}" target="_blank" rel="noopener sponsored" class="btn-primary" style="display:inline-block;padding:14px 40px;font-size:16px">Открыть счёт в ${b.name} →</a>
+    <p class="card-admark" style="margin-top:12px">Реклама · erid: ${b.erid}</p>
+    <div><button class="quiz-back" onclick="quizReset()" style="margin-top:8px">Пройти заново</button></div>`;
+}
+
+function quizReset(){
+  [1,2,3].forEach(i=>{
+    quizAnswers[i]=null;
+    document.getElementById('qs'+i).style.display=i===1?'block':'none';
+    document.getElementById('qd'+i).classList.remove('done');
+    document.querySelectorAll(`#qs${i} .quiz-opt`).forEach(b=>b.classList.remove('selected'));
+  });
+  document.getElementById('qs-result').style.display='none';
+}
+
+// ─────────────────────────────────────────────────────────────────
+// FAQ
+// ─────────────────────────────────────────────────────────────────
+const FAQS = [
+  { q:'Что такое РКО и зачем оно ИП или ООО?', a:'РКО — расчётно-кассовое обслуживание — это комплекс банковских услуг для бизнеса: расчётный счёт, платёжные поручения, работа с наличными, эквайринг. ИП и ООО обязаны проводить расчёты с контрагентами и бюджетом через банк — для этого и нужен расчётный счёт.' },
+  { q:'Можно ли открыть расчётный счёт онлайн?', a:'Да, все 6 банков в нашем сравнении открывают счёт онлайн: Т-Банк и Точка — за 1–2 часа без визита в офис, Альфа-Банк и Озон Банк — онлайн с выездом курьера для подписания документов. Реальные сроки: 1 рабочий день.' },
+  { q:'Бесплатное РКО существует или это маркетинг?', a:'Бесплатное обслуживание реально существует: Точка (тариф «Ноль»), Альфа-Банк («Стартовый») и Уралсиб («Старт ИП») дают 0 ₽ абонентки. Но бесплатных платежей мало (3–10 шт.), а за каждый сверх лимита — 29–89 ₽. Если у вас больше 10 платежей в месяц, бесплатный тариф быстро перестаёт быть выгодным.' },
+  { q:'В чём разница между РКО для ИП и ООО?', a:'Основные условия одинаковы, но у ООО есть дополнительные требования: обязательная подпись двух руководителей (при двух подписантах), корпоративная карта для директора, зарплатный проект. Некоторые банки предлагают специальные тарифы для ООО с расширенной отчётностью и бухгалтерией.' },
+  { q:'Как выбрать банк, если часто снимаю наличные?', a:'Ключевой параметр — процент за снятие. На базовых тарифах это 1,5–1,9% у большинства банков. Уралсиб на тарифе «Профи» снижает до 0,7%. Точка на тарифе «Максимальный» — тоже от 0,7%. Используйте наш калькулятор: введите сумму снятия, и он покажет реальную стоимость в каждом банке.' },
+  { q:'Что значит «холд» платежей и чем он опасен?', a:'Холд — это временная задержка входящего платежа. Некоторые банки (например, Альфа-Банк) держат деньги 1–14 дней, пока проверяют источник средств. Для торговли, где важна скорость оборота, это критично. ПСБ и Точка работают без задержек для стандартных операций.' },
+  { q:'Нужен ли расчётный счёт самозанятому?', a:'Самозанятые формально могут принимать платежи на личный счёт физлица. Но расчётный счёт упрощает учёт, позволяет принимать оплату от юрлиц по счёту и выглядеть профессиональнее. Озон Банк и Точка открывают РКО самозанятым без лишних документов.' },
+  { q:'Какие скрытые комиссии у банков есть чаще всего?', a:'Самые частые скрытые расходы: комиссия за снятие наличных сверх лимита, переводы физлицам (1–1,5%), SMS-уведомления (69–99 ₽/мес), обслуживание при нулевом обороте (переход на полный платный тариф), платёжные поручения в выходные (+99 ₽). Полный список — в разделе «Скрытые комиссии» выше.' },
+  { q:'Как быстро открывается счёт для нового ИП?', a:'Для нового ИП счёт открывается за 1–24 часа после регистрации в ФНС. Точка и Т-Банк позволяют открыть счёт параллельно с регистрацией бизнеса — сразу после получения ОГРНИП. Документы: паспорт, ИНН, ОГРНИП (приходит в ФНС онлайн).' },
+  { q:'Можно ли поменять банк, если не понравилось?', a:'Да, смена банка — стандартная процедура. Нужно уведомить всех контрагентов о смене реквизитов, перевыпустить постоянные платёжные поручения, закрыть старый счёт (обычно 1–7 дней). Многие банки предлагают помощь в переносе — уточняйте при открытии.' },
+];
+
+function renderFAQ(){
+  const list = document.getElementById('faqList');
+  if(!list) return;
+  list.innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item" id="faq-${i}">
+      <div class="faq-q" onclick="toggleFAQ(${i})">${f.q}<span class="faq-toggle">▼</span></div>
+      <div class="faq-a">${f.a}</div>
+    </div>`).join('');
+}
+function toggleFAQ(i){ document.getElementById('faq-'+i).classList.toggle('open') }
+
+// ─────────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',()=>{
+  renderGrid('catalogGrid','all');
+  renderFees();
+  renderScenarios();
+  calcUpdate();
+  renderFAQ();
+});
+
+// FAQ schema.org JSON-LD
+(function(){
+  const schema = {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity": FAQS.map(f=>({
+      "@type":"Question",
+      "name":f.q,
+      "acceptedAnswer":{"@type":"Answer","text":f.a}
+    }))
+  };
+  const s = document.createElement('script');
+  s.type='application/ld+json';
+  s.textContent=JSON.stringify(schema);
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
