@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>РКО для бизнеса 2026 — сравнить 5 банков за 2 минуты</title>
-<meta name="description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Уралсиб, Точка, Т-Банк. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
+<title>РКО для бизнеса 2026 — сравнить 6 банков за 2 минуты</title>
+<meta name="description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Уралсиб, Точка, Т-Банк, Банк Санкт-Петербург. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="РКО для бизнеса 2026 — сравнить 5 банков за 2 минуты">
-<meta property="og:description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Уралсиб, Точка, Т-Банк. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
+<meta property="og:title" content="РКО для бизнеса 2026 — сравнить 6 банков за 2 минуты">
+<meta property="og:description" content="Сравнение РКО для ИП и ООО: Альфа-Банк, ПСБ, Уралсиб, Точка, Т-Банк, Банк Санкт-Петербург. Калькулятор стоимости, скрытые комиссии, подбор по бизнесу.">
 <meta property="og:image" content="/og-image.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
@@ -339,7 +339,7 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:56px 0 32
       <button class="scenario-pill" onclick="filterCatalog('patent',this)">ИП на патенте</button>
     </div>
     <div class="hero__stats">
-      <div><div class="stat-val">5</div><div class="stat-lbl">банков в рейтинге</div></div>
+      <div><div class="stat-val">6</div><div class="stat-lbl">банков в рейтинге</div></div>
       <div><div class="stat-val">20+</div><div class="stat-lbl">параметров сравнения</div></div>
       <div><div class="stat-val">0 ₽</div><div class="stat-lbl">стоимость сервиса</div></div>
       <div><div class="stat-val">2 мин</div><div class="stat-lbl">до выбора банка</div></div>
@@ -618,6 +618,7 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:56px 0 32
           <li><a href="#catalog">Уралсиб РКО</a></li>
           <li><a href="#catalog">Точка РКО</a></li>
           <li><a href="#catalog">Т-Банк РКО</a></li>
+          <li><a href="#catalog">Банк СПб РКО</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -633,7 +634,7 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:56px 0 32
     <hr class="footer-hr">
     <div class="footer-legal">
       <p>Сайт носит информационный характер и не является офертой. Условия уточняйте на сайте банка.</p>
-      <p>Материалы, отмеченные «Реклама», являются рекламными. Рекламодатели: ПАО «Альфа-Банк», ПАО «ПСБ», ПАО «Уралсиб», ООО «Точка», АО «ТБанк».</p>
+      <p>Материалы, отмеченные «Реклама», являются рекламными. Рекламодатели: ПАО «Альфа-Банк», ПАО «ПСБ», ПАО «Уралсиб», ООО «Точка», АО «ТБанк», ПАО «Банк "Санкт-Петербург"» (ИНН 7831000027).</p>
       <p>Реклама. Информация о рекламодателе: ИП Кузлякин Валерий Юрьевич. ИНН: 550723498810. ОГРНИП: 326554300016144.</p>
     </div>
   </div>
@@ -761,6 +762,35 @@ const BANKS = {
     erid:'ERID_TOCHKA',
     scores:{startup:1,cashout:1,payments:2,market:2},
   },
+  bspb: {
+    id:'bspb', name:'Банк «Санкт-Петербург»',
+    tagline:'Персональный менеджер + ВЭД — СПб, Москва, Калининград, Новосибирск',
+    badge:'Персональный менеджер', badgeAccent:false,
+    types:['ip','ooo'],
+    perks:[
+      'Персональный менеджер с первого дня',
+      'Бесплатный выпуск и обслуживание Бизнес-карты',
+      'Специальные тарифы для участников ВЭД',
+      'Удобный Интернет-банк с понятным интерфейсом',
+      'Открытие с выездным менеджером — без офиса',
+    ],
+    tariffs:[
+      {name:'Базовый',   price:0,    pay:3,   extra:89, cash:2.0},
+      {name:'Стандарт',  price:1500, pay:50,  extra:39, cash:1.5},
+      {name:'Бизнес',    price:3000, pay:100, extra:25, cash:1.2},
+    ],
+    hidden:[
+      {l:'Снятие наличных',      v:'2% (мин. 200 ₽)',  warn:true},
+      {l:'Переводы физлицам',    v:'1% (мин. 50 ₽)',   warn:true},
+      {l:'Валютный контроль',    v:'0,15% от суммы',   warn:false},
+      {l:'Открытие счёта',       v:'Выезд или офис',   warn:false},
+    ],
+    pros:['Персональный менеджер','Бесплатная Бизнес-карта','Поддержка ВЭД'],
+    cons:['Нет онлайн-открытия без встречи','Только 4 региона'],
+    link:'ССЫЛКА_BSPB_RKO',
+    erid:'ERID_BSPB',
+    scores:{startup:3,cashout:2,payments:2,market:3},
+  },
   // ⚠️ Яндекс Директ: Доступ к офферу запрошен — не включать в Директ до получения реферальной ссылки
   tbank: {
     id:'tbank', name:'Т-Банк',
@@ -792,7 +822,7 @@ const BANKS = {
     scores:{startup:1,cashout:3,payments:1,market:2},
   },
 };
-const ORDER = ['alfa','psb','uralsib','tochka','tbank'];
+const ORDER = ['alfa','psb','uralsib','tochka','tbank','bspb'];
 
 // ─────────────────────────────────────────────────────────────────
 // HELPERS
