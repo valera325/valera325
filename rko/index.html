@@ -643,7 +643,6 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:56px 0 32
 <script>
 // ─────────────────────────────────────────────────────────────────
 // ДАННЫЕ БАНКОВ
-// TODO: замените ERID_* на реальные erid из кабинета рекламодателя
 // ─────────────────────────────────────────────────────────────────
 const BANKS = {
   alfa: {
@@ -672,7 +671,7 @@ const BANKS = {
     pros:['Открытие за 1 день','Бесплатная бизнес-карта','Поддержка 24/7'],
     cons:['Дорогое снятие наличных','Платные SMS'],
     link:'https://rko-group.ru/s/G1TvhblX',
-    erid:'ERID_ALFA',
+    erid:'CQH36pWzJqVKtoSikpLcK5dDX2ct7DAfiVJ72m9iBXpHh',
     scores:{startup:1,cashout:3,payments:2,market:3},
   },
   psb: {
@@ -702,7 +701,7 @@ const BANKS = {
     pros:['Кэшбэк до 5%','Гос. программы поддержки','Самые дешёвые доп. платежи'],
     cons:['Снятие дорого на базовом','Меньше digital-функций'],
     link:'https://rko-group.ru/s/TkezzW3L',
-    erid:'ERID_PSB',
+    erid:'CQH36pWzJqVKtoSj2HTMq6th43NSTe2XkiZp5dfTAQJK3K',
     scores:{startup:2,cashout:2,payments:1,market:3},
   },
   uralsib: {
@@ -730,7 +729,7 @@ const BANKS = {
     pros:['0 ₽ для новых ИП','Высокая конверсия (CR 28%)','Региональная поддержка'],
     cons:['Меньше digital','Чуть медленнее онлайн-банков'],
     link:'https://rko-group.ru/s/UDikTXgE',
-    erid:'ERID_URALSIB',
+    erid:'CQH36pWzJqVKtoSimsnW2dhM5p6z6VMDwZQhtbcWg1Yrsg',
     scores:{startup:1,cashout:1,payments:3,market:3},
   },
   // ⚠️ Яндекс Директ: По согласованию — запросить разрешение RKO Group перед запуском рекламы
@@ -759,7 +758,7 @@ const BANKS = {
     pros:['Реальный 0 ₽ без оборота','Отличное приложение','24/7 онлайн'],
     cons:['Нет физических офисов','Бюджетные платежи платные на «Ноль»'],
     link:'https://rko-group.ru/s/siWbVV6I',
-    erid:'ERID_TOCHKA',
+    erid:'CQH36pWzJqVKtoSirFcd7nl9BfLLjcQcFkrH76DpdV4z9o',
     scores:{startup:1,cashout:1,payments:2,market:2},
   },
   bspb: {
@@ -788,7 +787,7 @@ const BANKS = {
     pros:['Персональный менеджер','Бесплатная Бизнес-карта','Поддержка ВЭД'],
     cons:['Нет онлайн-открытия без встречи','Только 4 региона'],
     link:'https://rko-group.ru/s/PIFseq8S',
-    erid:'ERID_BSPB',
+    erid:'CQH36pWzJqVKtoSiz88JHkoxRJXkRTJbUNWeSYPw7LM2M',
     scores:{startup:3,cashout:2,payments:2,market:3},
   },
   // ⚠️ Яндекс Директ: Доступ к офферу запрошен — не включать в Директ до получения реферальной ссылки
@@ -1188,6 +1187,21 @@ document.addEventListener('DOMContentLoaded',()=>{
   s.type='application/ld+json';
   s.textContent=JSON.stringify(schema);
   document.head.appendChild(s);
+})();
+</script>
+
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var yclid = p.get('yclid') || p.get('_yclid') || '';
+  if (yclid) sessionStorage.setItem('yclid', yclid);
+  else yclid = sessionStorage.getItem('yclid') || '';
+  if (!yclid) return;
+  document.querySelectorAll('a[href*="rko-group.ru/s/"]').forEach(function(a){
+    var u = new URL(a.href);
+    u.searchParams.set('click_id', yclid);
+    a.href = u.toString();
+  });
 })();
 </script>
 </body>
